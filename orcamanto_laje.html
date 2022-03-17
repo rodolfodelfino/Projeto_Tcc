@@ -16,28 +16,68 @@
   </header>
 
   <form class="formulario" onsubmit="event.preventDefault(); multiplicar();">
-    <label>
-      Largura
-      <input type="number" step="0.01" id="largura2" required>
-    </label>
+    <div id="container1">
 
-    <label>
-      Comprimento
-      <input type="number" step="0.01" id="comprimento2" required>
-    </label>
+      <div>
 
-    <label>
-      Tipo
-      <select name="" id="tipo">
-        <option value="exposta">Exposta</option>
-        <option value="protegida">Protegida</option>
-      </select>
-    </label>
+        <label>
+        Nome
+        <input type="text" id="nome" required>
+        </label>
 
-    <label for="">
-      &nbsp;
-      <input class="btn" type="submit" value="Calcular">
-    </label>
+        <label>
+          Endereço
+          <input type="text" id="endereco" required>
+        </label>
+      </div>
+        
+      <div id="local">
+      <label>
+          Telefone
+          <input type="tel" id="telefone" required>
+        </label>
+
+        <label>
+         Cidade
+          <input type="text" id="cidade" required>
+        </label>
+
+        <label>
+          Estado
+          <input type="text" id="estado" required>
+        </label>
+
+      </div>
+
+   
+
+
+    <div id="calculo"><label>
+        Largura
+        <input type="number" step="0.01" id="largura2" required>
+      </label>
+
+      <label>
+        Comprimento
+        <input type="number" step="0.01" id="comprimento2" required>
+      </label>
+
+      <label>
+        Tipo
+        <select name="" id="tipo">
+          <option value="exposta">Exposta</option>
+          <option value="protegida">Protegida</option>
+        </select>
+      </label>
+
+      <label for="">
+        &nbsp;
+        <input class="btn" type="submit" value="Calcular">
+      </label>
+    </div>
+
+    </div>
+  </div>
 
   </form>
 
@@ -63,26 +103,26 @@
       var c1 = Number(med2.value)
       var area_total = l1 * c1
 
-      if(tipo.value == "exposta"){
-        if(area_total <= 20){
+      if (tipo.value == "exposta") {
+        if (area_total <= 20) {
           multiplicar20MenosExposta();
         }
-        if(area_total > 20 && area_total < 50){
+        if (area_total > 20 && area_total < 50) {
           multiplicar50MenosExposta();
         }
-        if(area_total >= 50){
+        if (area_total >= 50) {
           multiplicar50MaisExposta();
         }
       }
 
-      if(tipo.value == "protegida"){
-        if(area_total <= 20){
+      if (tipo.value == "protegida") {
+        if (area_total <= 20) {
           multiplicar20MenosProtegida();
         }
-        if(area_total > 20 && area_total < 50){
+        if (area_total > 20 && area_total < 50) {
           multiplicar50MenosProtegida();
         }
-        if(area_total >= 50){
+        if (area_total >= 50) {
           multiplicar50MaisProtegida();
         }
       }
@@ -110,8 +150,8 @@
 
 
 
-     // Área com manta 3mm Desc
-     var qtdMantaMorter = (area_total * 1.10 / 7)
+      // Área com manta 3mm Desc
+      var qtdMantaMorter = (area_total * 1.10 / 7)
       var qtdPlastipegante = qtdMantaMorter / 10
       var qtdDiplas = qtdMantaMorter / 10
       var totalprod = qtdMantaMorter * manta3mmDesc + qtdPlastipegante * plastipegante + qtdDiplas * diplas
@@ -147,7 +187,7 @@
       var area_total = l1 * c1
 
 
-     const manta3mmDesc = 557
+      const manta3mmDesc = 557
       const manta3mmAlum = 624
       const manta2mmMorpl = 641
       const plastipegante = 412
@@ -158,11 +198,11 @@
 
 
 
-     // Área com manta 3mm Desc
-     var qtdMantaMorter = (area_total * 1.15 / 7)
+      // Área com manta 3mm Desc
+      var qtdMantaMorter = (area_total * 1.15 / 7)
       var qtdPlastipegante = qtdMantaMorter / 10
       var qtdDiplas = qtdMantaMorter / 10
-      var totalprod = qtdMantaMorter * manta3mmAlum + qtdPlastipegante * plastipegante 
+      var totalprod = qtdMantaMorter * manta3mmAlum + qtdPlastipegante * plastipegante
       var totalMaodeObra = area_total * maoDeObra
       var totalOrcamento = totalprod + totalMaodeObra
       var totalMaodeObraFprmatado = totalMaodeObra.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -195,7 +235,7 @@
       var area_total = l1 * c1
 
 
-    const manta3mmDesc = 557
+      const manta3mmDesc = 557
       const manta3mmAlum = 624
       const manta2mmMorpl = 641
       const plastipegante = 412
@@ -206,11 +246,11 @@
 
 
 
-     // Área com manta 3mm Desc
-     var qtdMantaMorter = (area_total * 1.15 / 7)
+      // Área com manta 3mm Desc
+      var qtdMantaMorter = (area_total * 1.15 / 7)
       var qtdPlastipegante = qtdMantaMorter / 10
       var qtdDiplas = qtdMantaMorter / 10
-      var totalprod = qtdMantaMorter * manta3mmAlum + qtdPlastipegante * plastipegante 
+      var totalprod = qtdMantaMorter * manta3mmAlum + qtdPlastipegante * plastipegante
       var totalMaodeObra = maoDeObra
       var totalOrcamento = totalprod + totalMaodeObra
       var totalMaodeObraFprmatado = totalMaodeObra.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -240,7 +280,7 @@
       var c1 = Number(med2.value)
       var area_total = l1 * c1
 
-     const manta3mmDesc = 376.16
+      const manta3mmDesc = 376.16
       const manta3mmAlum = 422.43
       const manta2mmMorpl = 435.50
       const plastipegante = 279.73
@@ -253,7 +293,7 @@
       // Área com manta 3mm Desc
       var qtdMantaMorter = Math.ceil(area_total * 1.10 / 7)
       var qtdPlastipegante = Math.ceil(qtdMantaMorter / 10)
-      var qtdDiplas = Math.ceil (qtdMantaMorter / 10)
+      var qtdDiplas = Math.ceil(qtdMantaMorter / 10)
       var totalprod = qtdMantaMorter * manta3mmDesc + qtdPlastipegante * plastipegante + qtdDiplas * diplas
       var totalMaodeObra = area_total * maoDeObra
       var totalOrcamento = totalprod + totalMaodeObra
@@ -297,8 +337,8 @@
       // Área com manta 3mm Desc
       var qtdMantaMorter = Math.ceil(area_total * 1.15 / 7)
       var qtdPlastipegante = Math.ceil(qtdMantaMorter / 10)
-      var qtdDiplas = Math.ceil (qtdMantaMorter / 10)
-      var totalprod = qtdMantaMorter * manta3mmAlum + qtdPlastipegante * plastipegante 
+      var qtdDiplas = Math.ceil(qtdMantaMorter / 10)
+      var totalprod = qtdMantaMorter * manta3mmAlum + qtdPlastipegante * plastipegante
       var totalMaodeObra = area_total * maoDeObra
       var totalOrcamento = totalprod + totalMaodeObra
       var totalMaodeObraFprmatado = totalMaodeObra.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -340,8 +380,8 @@
 
 
 
-     // Área com manta 3mm Desc
-     var qtdMantaMorter = (area_total * 1.10 / 7)
+      // Área com manta 3mm Desc
+      var qtdMantaMorter = (area_total * 1.10 / 7)
       var qtdPlastipegante = qtdMantaMorter / 10
       var qtdDiplas = qtdMantaMorter / 10
       var totalprod = qtdMantaMorter * manta3mmDesc + qtdPlastipegante * plastipegante + qtdDiplas * diplas
