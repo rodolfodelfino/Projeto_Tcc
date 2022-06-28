@@ -12,6 +12,23 @@
   font-family: 'Poppins', sans-serif;
 }
 
+#containerTitulo{
+  background-color: #1485ee;
+  border-radius: 50px;
+  max-width: 80%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#titulo{
+  font-weight: 700;
+  font-size: 35px;
+  color: #fff;
+  max-width:100%;
+  
+  
+}
+
 .home {
   min-height: 100vh;
   display: flex;
