@@ -102,6 +102,11 @@
     </div>
   </fieldset>
 
+  <button onclick="gerarPdf()" onsubmit="event.preventDefault();">Gerar PDF</button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"
+    integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs"
+    crossorigin="anonymous"></script>
+
 
   <script>
 
@@ -299,6 +304,15 @@
 
 
       res2.innerHTML = `Nome: ${name} </p> Endereço: ${end}</p> Cidade: ${cidade1} </p> Estado: ${est} </p> Telefone: ${tel} </p> <strong> Área Total: ${area_total} m2 </strong>  </p> <p> Irá utilizar: </p> ${qtdman} rolos de Manta Asfáltica Morterplas 3 mm 1,10 x 7 Mts ${totalVlMantaform}</p> <p> ${qtdPl} baldes de Primer Plastipegante ${totalVlPlastipeganteform}</p> <p> ${qtdDi} Sacos de Argamassa Extra Forte Diplas ${totalVlDiplasform} </p> <p> Total de produtos  ${totalProdFormatado} </p> <p>Mão de obra ${totalMaodeObraFprmatado}</p> Total de ${totalOrcamentoFormatado}</p>`
+
+
+    }
+
+    function gerarPdf() {
+      var conteudo = document.getElementById('res2').innerText
+      var doc = new jsPDF()
+      doc.text(conteudo, 5, 15)
+      doc.save('orçamento.pdf')
 
 
     }
